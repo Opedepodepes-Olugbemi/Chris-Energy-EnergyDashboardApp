@@ -1,0 +1,391 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f6f3ff, #e2e8ff);
+    color: #2c3e50;
+}
+
+h1, h2, h3 {
+    color: #4a4e69;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+#device-selection, #usage-statistics, #device-leaderboard, #location-selection {
+    background: linear-gradient(to bottom right, #c9cba3, #ffe1a8);
+    padding: 25px;
+    border-radius: 10px;
+    flex: 1 1 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+
+#device-selection:hover, #usage-statistics:hover, #device-leaderboard:hover, #location-selection:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    transition: all 0.3s ease;
+}
+
+th {
+    background-color: #4a4e69;
+    color: #fff;
+    font-weight: bold;
+}
+
+tr {
+    background-color: rgba(255,255,255,0.7);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+button {
+    background: linear-gradient(to right, #9a8c98, #4a4e69);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: linear-gradient(to right, #4a4e69, #22223b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+button.remove-device {
+    background: linear-gradient(to right, #e56b6f, #b56576);
+}
+
+button.remove-device:hover {
+    background: linear-gradient(to right, #b56576, #6d597a);
+}
+
+nav {
+    background: linear-gradient(to right, #4a4e69, #22223b);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ffe1a8;
+    text-shadow: 0 0 5px rgba(255,225,168,0.5);
+}
+
+#clear-leaderboard {
+    background: linear-gradient(to right, #e56b6f, #b56576);
+}
+
+#clear-leaderboard:hover {
+    background: linear-gradient(to right, #b56576, #6d597a);
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #c9cba3, #ffe1a8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #4a4e69;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    padding: 10px;
+    border: 1px solid #9a8c98;
+    border-radius: 4px;
+
+    background-color: #fff;
+    color: #2c3e50;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4a4e69;
+    box-shadow: 0 0 0 2px rgba(74, 78, 105, 0.2);
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #9a8c98, #4a4e69);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #4a4e69, #22223b);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+@media screen and (min-width: 768px) {
+    #dashboard {
+        flex-wrap: nowrap;
+    }
+
+    #location-search, #location-form {
+        flex-direction: row;
+    }
+
+    #location-search input[type="text"],
+    #location-form input[type="text"] {
+        flex-grow: 1;
+        width: 85%;
+        margin-right: 10px;
+    }
+
+
+    #location-search button,
+    #location-form button {
+        width: auto;
+        min-width: 120px;
+    }
+
+    input[type="text"], input[type="number"] {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #dashboard {
+        justify-content: space-around;
+    }
+}
+
+.chart-container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes growBar {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+@keyframes growPie {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.chart-container canvas {
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+.chart-container .bar-chart rect {
+    transform-origin: bottom;
+    animation: growBar 1s ease-out forwards;
+}
+
+.chart-container .pie-chart path {
+    transform-origin: center;
+    animation: growPie 1s ease-out forwards;
+}
+
+.chart-container .line-chart path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 2s ease-out forwards;
+}
+
+@keyframes drawLine {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+table {
+    animation: fadeIn 0.5s ease-out;
+}
+
+tr {
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+tr:nth-child(1) { animation-delay: 0.1s; }
+tr:nth-child(2) { animation-delay: 0.2s; }
+tr:nth-child(3) { animation-delay: 0.3s; }
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+  }
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: all 0.3s ease;
+  }
+
+nav {
+    background: linear-gradient(to right, #4a4e69, #22223b);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+nav ul li a:hover {
+    color: #ffe1a8;
+    text-shadow: 0 0 5px rgba(255,225,168,0.5);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100%;
+        background: linear-gradient(to bottom, #4a4e69, #22223b);
+        transition: 0.5s;
+        z-index: 999;
+    }
+
+    nav.active {
+        left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+  }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+  }
+}
