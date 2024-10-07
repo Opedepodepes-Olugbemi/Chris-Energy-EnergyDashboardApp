@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Devices</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <main id="manage-devices">
+        <h1>Manage Devices</h1>
+        <table id="device-table">
+            <thead>
+                <tr>
+                    <th>Device Name</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Device rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <script type="module" src="/js/manageDevices.mjs"></script>
+    <script type="module" src="/js/menu.mjs"></script>
+</body>
+</html>

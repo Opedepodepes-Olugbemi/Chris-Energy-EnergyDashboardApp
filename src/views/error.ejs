@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main id="error-page">
+        <h1>Oops! Something went wrong</h1>
+        <p>We're sorry, but an error occurred. Please try again later.</p>
+        <% if (error && error.status) { %>
+            <p>Status: <%= error.status %></p>
+        <% } %>
+        <% if (error && error.stack) { %>
+            <pre><%= error.stack %></pre>
+        <% } %>
+        <a href="/">Return to Home</a>
+    </main>
+</body>
+</html>
